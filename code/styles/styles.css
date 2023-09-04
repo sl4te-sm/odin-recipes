@@ -1,0 +1,20 @@
+body {
+    font-family: 'Trebuchet MS', 'Calibri', sans-serif;
+    background-color: bisque;
+}
+
+h1 {
+    background-color: saddlebrown;
+}
+
+.subtext {
+    color: gray;
+}
+
+.desc {
+    font-size: xx-large;
+}
+
+.note {
+    font-weight: bolder;
+}
