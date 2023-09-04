@@ -15,4 +15,4 @@ jobs:
         uses: Azure/cli@v1.0.8
         with:
           inlineScript: |
-            az storage blob upload-batch --destination '$web' --source $GITHUB_WORKSPACE --account-name odinrecipes01929317 --account-key ${{ secrets.AZ_ACCESS_KEY }}
+            az storage blob upload-batch --destination '$web' --source $GITHUB_WORKSPACE/html --account-name odinrecipes01929317 --account-key ${{ secrets.AZ_ACCESS_KEY }}
