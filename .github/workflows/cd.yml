@@ -1,0 +1,18 @@
+name: CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.0.0
+
+      - name: Copy files to container
+        uses: Azure/cli@v1.0.8
+        with:
+          inlineScript: |
+            az storage blob upload-batch --destination '$web' --source $GITHUB_WORKSPACE --account-name odinrecipes01929317 --account-key ${{ secrets.AZURE_ACCESS_KEY }}
