@@ -3,6 +3,7 @@ name: CD
 on:
   push:
     branches: [ main ]
+    paths: [ code/** ]
 
 jobs:
   deploy:
@@ -11,8 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.0.0
 
+      - name: Remove current container contents
+        uses: Azure/cli@v1.0.8
+        with:
+          inlineScript: |
+            az storage blob delete-batch --source '$web' --account-name odinrecipes01929317 --accountkey ${{ secrets.AZ_ACCESS_KEY }}
+
       - name: Copy files to container
         uses: Azure/cli@v1.0.8
         with:
           inlineScript: |
-            az storage blob upload-batch --destination '$web' --source $GITHUB_WORKSPACE/html --account-name odinrecipes01929317 --account-key ${{ secrets.AZ_ACCESS_KEY }}
+            az storage blob upload-batch --destination '$web' --source $GITHUB_WORKSPACE/code --account-name odinrecipes01929317 --account-key ${{ secrets.AZ_ACCESS_KEY }}
