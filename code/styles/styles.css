@@ -1,20 +1,51 @@
 body {
     font-family: 'Trebuchet MS', 'Calibri', sans-serif;
     background-color: bisque;
+    margin: 0px;
 }
 
 h1 {
     background-color: saddlebrown;
+    padding: 8px;
+    text-align: center;
 }
 
 .subtext {
     color: gray;
+    text-align: center;
+    display: block;
 }
 
 .desc {
     font-size: xx-large;
+    text-align: center;
+    background-color: tan;
 }
 
 .note {
     font-weight: bolder;
+    display: block;
+    margin: 8px;
+    padding: 8px;
+    background-color: lightblue;
+}
+
+img {
+    display: block;
+    margin: 0px auto;
+}
+
+p {
+    margin: 8px;
+}
+
+h2 {
+    padding: 0px 8px;
+}
+
+.return {
+    text-align: right;
+    display: block;
+    padding: 8px;
+    margin-bottom: 8px;
 }
